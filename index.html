@@ -6,6 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dhinesh</title>
     <link rel="stylesheet" href="css/main.css">
+    <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll/dist/smooth-scroll.polyfills.min.js">
+        var scroll = new SmoothScroll('a[href*="#"]');
+        var scroll = new SmoothScroll('a[href*="#"]', {
+	speed: 1000
+});
+    </script>
 </head>
 <body>
     <div class="navbar">
@@ -17,28 +23,30 @@
             <nav> 
                 <img id="mobile-exit" class="mobile-menu-exit" src="images/exit.svg" alt="Close Navigation">
                 <ul class="primary-nav">
-                    <li class="current"><a href="#">HOME</a></li>
-                    <li><a href="#">ABOUT US</a></li>
-                    <li><a href="#">MUSIC GALLARY</a></li>
+                    <li class="current"><a href="#he">HOME</a></li>
+                    <li><a href="#au">ABOUT US</a></li>
+                    <li><a href="#mus">MUSIC GALLARY</a></li>
                 </ul>
 
                 <ul class="Secondary-nav">
-                    <li><a href="#">CONTACT</a></li>
-                    <li class="go-premium-cta"><a href="#">HIRE ME</a></li>
+                    <li><a href="#con">CONTACT</a></li>
+                    <li class="go-premium-cta"><a href="#achas">HIRE ME</a></li>
                 </ul>                
             </nav>
         </div>
     </div>
 
-<section class="hero">
+<section class="hero" id="he">
+    <div class="container-2">
     <div class="sub-hero">
         <h1>Music is Life</h1>
         <p>Musicians are next doctor</p>
     </div>
 
     <div class="btns">
-        <a class="gal" href="#">Music Gallary</a>
+        <a class="gal" href="#mus">Music Gallary</a>
     </div>
+</div>
 </section>
 <script>
 
@@ -56,12 +64,13 @@
 
 </script>
 
-
-<!--About us-->
 <div class="header">
     <h1>ABOUT ME</h1>
 </div>
-<section class="about-us">
+
+<!--About us-->
+<section class="about-us" id="au">
+
     <div class="dhinesh-photo">
         <img src="images/dhinesh.jpg" alt="My_Photo">
     </div> 
@@ -76,7 +85,9 @@
     
 </section>
 
-<section class="music-gal">
+<!-- Music Gallery -->
+
+<section class="music-gal" id="mus">
     <hr>
     <h1 class="title">Music Gallary</h1>
     <div class="pop">
@@ -122,6 +133,49 @@
       Your browser does not support the audio element.
       </audio>
 
+      <script>
+        document.addEventListener('play', function(e){
+    var audios = document.getElementsByTagName('audio');
+    for(var i = 0, len = audios.length; i < len;i++){
+        if(audios[i] != e.target){
+            audios[i].pause();
+        }
+    }
+}, true);
+      </script>
+      <hr>
+
+</section>
+
+<!--Contact-->
+
+<section class="contact" id="con">
+    <div class="container-3">
+        <div class="contact-left">
+            <h2>Contact</h2>
+
+            <form action="">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name">
+
+
+                <label for="message">Message</label>
+                <textarea name="message" id="message" cols="30" rows="10"></textarea><br>
+
+                
+                <input type="submit" class="send-message-cta" value="Sent message">
+
+            </form>
+        </div>
+        <div class="contact-right">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d390800.2966273057!2d86.48514907180699!3d27.85778485840269!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39e854a215bd9ebd%3A0x576dcf806abbab2!2z4K6O4K614K6w4K-G4K6a4K-B4K6f4K-N4K6f4K-BIOCumuCuv-CuleCusOCuruCvjQ!5e0!3m2!1sta!2sin!4v1660373725047!5m2!1sta!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+
+    </div>
+</section>
+
+<section class="cc">
+    <p>Dhinesh Studio © All Rights Reserved </p>
 </section>
 
 </body>
